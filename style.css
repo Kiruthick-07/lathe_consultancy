@@ -1,3 +1,104 @@
 body {
   font-family: 'Poppins', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.logo{
+    font-size: 20px;
+    color: #001ac6;
+    font-weight: 600;
+    margin: 10px;
+}
+.link{
+    margin-right: 30px;
+    text-decoration: none;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    display: flex;
+    max-width: 1000px;
+    padding: 40px;
+    align-items: center;
+    gap: 50px;
+}
+
+.content {
+    flex: 1;
+}
+
+h1 {
+    color: #1d3f91;
+    font-size: 3em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+    background-color: #1d3f91;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #163276;
+}
+
+.btn.secondary {
+    border: 2px solid #1d3f91;
+    color: #1d3f91;
+}
+
+.btn.secondary:hover {
+    background-color: #1d3f91;
+    color: white;
+}
+
+.image img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+.landing-page{
+     background-color: #e9f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
