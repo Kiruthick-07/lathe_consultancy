@@ -35,6 +35,19 @@ body {
     color: inherit;
 }
 
+.nav-links a:hover {
+    text-decoration: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -88,7 +101,7 @@ body {
     }
 }
 
-h1 {
+.head-title {
     color: #1d3f91;
     font-size: clamp(2em, 5vw, 3em);
     margin-bottom: 20px;
@@ -97,7 +110,7 @@ h1 {
     display: inline-block;
 }
 
-h1::after {
+.head-title::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -249,7 +262,7 @@ p {
 .about {
     text-align: center;
     padding: 60px 20px;
-    background-color: #f4f7fc;
+    background-color: #fefefe;
 }
 
 .about h2 {
@@ -313,7 +326,37 @@ p {
     max-width: 400px;
     border-radius: 10px;
 }
+.services{
+     background-color: #f4f7fc;
+}
+.service-title{
+    color: #1d3f91;
+    font-size: 2.5em;
+    margin: 08px;
+}
+.service-card{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 10px 35px 0px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    padding: 50px;
+}
 
 
 @media screen and (max-width: 768px) {
