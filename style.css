@@ -82,45 +82,91 @@
         order: -1;
     }
 }
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+html {
+    scroll-behavior: smooth;
 }
-.navbar{
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
     width: 100%;
-    top: 0%;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
-.logo{
-    font-size: 20px;
-    color: #001ac6;
+
+.navbar.scrolled {
+    padding: 0.8rem 5%;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.logo {
+    font-size: 1.5rem;
     font-weight: 600;
-    margin: 10px;
 }
-.link{
-    margin-right: 30px;
+
+.logo a {
+    color: #1d3f91;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
-.nav-links{
+
+.logo a:hover {
+    color: #2850b0;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: inherit;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, #1d3f91 0%, #2850b0 100%);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    text-decoration: none;
+    color: #1d3f91;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 
@@ -716,7 +762,6 @@ p {
     }
 }
 
-/* Additional mobile optimizations for smaller screens */
 @media screen and (max-width: 480px) {
     .contact-section {
         padding: 30px 10px;
@@ -762,26 +807,60 @@ p {
 
 
 @media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
     .hamburger {
         display: block;
-        margin-right: 20px;
+        cursor: pointer;
+        margin-right: 10px;
+        z-index: 100;
     }
 
     .nav-links {
         display: none;
         width: 100%;
-        position: absolute;
-        top: 70px;
+        position: fixed;
+        top: 0;
         left: 0;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        padding: 80px 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
     }
 
     .nav-links.active {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #1d3f91;
+        margin: 5px 0;
+        transition: all 0.3s ease;
     }
 
     .hamburger.active .bar:nth-child(1) {
@@ -795,6 +874,8 @@ p {
     .hamburger.active .bar:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
+
+    /* Landing page mobile styles */
     .container {
         flex-direction: column-reverse;
         text-align: center;
@@ -810,8 +891,7 @@ p {
         justify-content: center;
     }
 
-    .image img {
-        max-width: 90%;
+    .image {
         display: none;
     }
 
@@ -826,4 +906,10 @@ p {
     p {
         margin: 20px auto;
     }
+
+    /* Prevent scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
 }
