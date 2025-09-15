@@ -1,3 +1,87 @@
+/* Footer Styles */
+.site-footer {
+    background: linear-gradient(135deg, #1d3f91 0%, #2850b0 100%);
+    color: #fff;
+    padding: 40px 0 30px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.site-footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.site-footer .footer-info,
+.site-footer .footer-links,
+.site-footer .footer-contact {
+    flex: 1;
+    min-width: 250px;
+    padding: 0 15px;
+}
+
+.site-footer .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.site-footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.site-footer .footer-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.site-footer p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 8px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.site-footer .footer-info {
+    text-align: left;
+}
+
+.site-footer .footer-contact {
+    text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+    .site-footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .site-footer .footer-info,
+    .site-footer .footer-contact {
+        text-align: center;
+    }
+    
+    .site-footer .footer-links {
+        order: -1;
+    }
+}
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
